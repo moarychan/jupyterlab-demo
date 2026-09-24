@@ -1,0 +1,70 @@
+{
+	"name": "moary-test",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "aspmoary",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 1,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "true",
+				"spark.dynamicAllocation.minExecutors": "1",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "f03230ff-8d96-436f-823e-742bed8c62f4"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": true,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/0d10c520-c1fe-4696-8e60-9610a8ba2498/resourceGroups/rg-moary/providers/Microsoft.Synapse/workspaces/asa-moary/bigDataPools/aspmoary",
+				"name": "aspmoary",
+				"type": "Spark",
+				"endpoint": "https://asa-moary.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/aspmoary",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.5",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"from time import sleep\n",
+					"\n",
+					"sleep_total = 5\n",
+					"date_str = \"2026-09-20\"\n",
+					"index = 1\n",
+					"print(\"Starting...\")\n",
+					"for i in range(0, 5):\n",
+					"  print(date_str + \" \" + str(i + 1))\n",
+					"  sleep(sleep_total)\n",
+					"print(\"Done\")"
+				],
+				"execution_count": 1
+			}
+		]
+	}
+}
